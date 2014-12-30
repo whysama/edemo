@@ -1,0 +1,6 @@
+Pour utiliser l'alerting email, il faut faire en haut des fichiers php appelés par url  :
+
+require_once plateforme.'/error/mailalert.php';
+
+Pour ne pas créer de conflit, ne pas utiliser la méthode PHP : register_shutdown_function
+

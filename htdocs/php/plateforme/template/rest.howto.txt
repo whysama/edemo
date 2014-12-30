@@ -1,0 +1,20 @@
+NOTE:
+
+Pour utiliser la fonctionnalité REST PHP:
+
+-copier le contenu du répertoire /flux/rest/ dans le dossier des flux du projet en question
+
+-mettre a jour le fichier .htaccess pour utiliser RewriteBase avec le bon nom de projet
+
+-développer ensuite les différents services dans le répertoire services, en créant des classes qui héritent de RestGeneric
+  -on peut utiliser des méthodes intermédiaires sans qu'elles apparaissent dans l'APi en utilisant private function ...
+  -on peut utiliser des classes intermédiaires qui n'apparaitront pas dans l'api si elles n'héritent pas de RestGeneric
+    /!\ Attention, l'inclusion des fichiers php dans services/ se fait de manière automatique, et par défaut, par ordre alphabétique des noms de fichiers
+    Pour qu'un fichier a.php utilise un fichier z.php, il faut au début de a.php déclarer:
+      require_once __DIR__.'/z.php';
+    Le fichier z.php sera alors inclus qu'une seule fois, avant a.php
+
+    Un exemple de fichier service est commenté dans le fichier restclass.php avec l'utilisation de l'attribut method
+
+-vérifier que tout est fonctionnel dans la documentation : http://domaine-du-projet/projet/dossier-flux/api/
+  En cas d'erreur, les expressions: Not documented peuvent apparaître dans la page d'api

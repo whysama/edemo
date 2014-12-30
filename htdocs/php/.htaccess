@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine on
+#If the rewriting does not work specify RewriteBase
+#Airweb-ubuntu
+RewriteBase /edemo/php
+#Home Macbook
+#RewriteBase /~young/edemo/htdocs/php
+
+RewriteRule ^(.)+$  index.php [L]
+
